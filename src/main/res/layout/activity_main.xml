@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Pratos Principais -->
+        <TextView
+            android:text="Pratos Principais"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="48dp"
+            android:paddingBottom="16dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerPratos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Bebidas -->
+        <TextView
+            android:text="Bebidas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerBebidas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Salgados -->
+        <TextView
+            android:text="Salgados"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerSalgados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Doces -->
+        <TextView
+            android:text="Doces"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerDoces"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Botão para acessar o carrinho -->
+        <Button
+            android:id="@+id/btnCarrinho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ir para o Carrinho"
+            android:padding="12dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</ScrollView>
