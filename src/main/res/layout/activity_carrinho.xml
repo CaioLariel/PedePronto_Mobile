@@ -31,7 +31,7 @@
         android:layout_gravity="center"
         android:paddingTop="16dp" />
     <Button
-        android:id="@+id/btnFazerPagamento"
+        android:id="@+id/btnPagamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fazer Pagamento"
