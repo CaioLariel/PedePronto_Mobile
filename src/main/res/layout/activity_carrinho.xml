@@ -30,5 +30,11 @@
         android:textStyle="bold"
         android:layout_gravity="center"
         android:paddingTop="16dp" />
+    <Button
+        android:id="@+id/btnFazerPagamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fazer Pagamento"
+        android:layout_margin="16dp" />
 
 </LinearLayout>
