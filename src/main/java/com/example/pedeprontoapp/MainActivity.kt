@@ -45,12 +45,11 @@ class MainActivity : AppCompatActivity() {
             Prato("Bolo de Chocolate", "Fatia de bolo com recheio cremoso de chocolate.", 8.00, R.drawable.bolo_chocolate)
         )
 
-        recyclerPratos.adapter = PratoAdapter(listaPratos) { prato -> produtosSelecionados.add(prato) }
-        recyclerBebidas.adapter = PratoAdapter(listaBebidas) { prato -> produtosSelecionados.add(prato) }
-        recyclerSalgados.adapter = PratoAdapter(listaSalgados) { prato -> produtosSelecionados.add(prato) }
-        recyclerDoces.adapter = PratoAdapter(listaDoces) { prato -> produtosSelecionados.add(prato) }
+        recyclerPratos.adapter = PratoAdapter(listaPratos) { prato -> toggleProduto(prato) }
+        recyclerBebidas.adapter = PratoAdapter(listaBebidas) { prato -> toggleProduto(prato) }
+        recyclerSalgados.adapter = PratoAdapter(listaSalgados) { prato -> toggleProduto(prato) }
+        recyclerDoces.adapter = PratoAdapter(listaDoces) { prato -> toggleProduto(prato) }
 
-        // Configura o botão para ir ao carrinho
         val btnCarrinho: Button = findViewById(R.id.btnCarrinho)
         btnCarrinho.setOnClickListener {
             if (produtosSelecionados.isNotEmpty()) {
@@ -58,6 +57,14 @@ class MainActivity : AppCompatActivity() {
                 intent.putParcelableArrayListExtra("produtos", ArrayList(produtosSelecionados))
                 startActivity(intent)
             }
+        }
+    }
+
+    private fun toggleProduto(prato: Prato) {
+        if (produtosSelecionados.contains(prato)) {
+            produtosSelecionados.remove(prato)
+        } else {
+            produtosSelecionados.add(prato)
         }
     }
 }

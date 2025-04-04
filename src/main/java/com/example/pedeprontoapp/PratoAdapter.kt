@@ -1,16 +1,20 @@
 package com.example.pedeprontoapp
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class PratoAdapter(private val listaPratos: List<Prato>, private val onItemAdded: (Prato) -> Unit) :
-    RecyclerView.Adapter<PratoAdapter.PratoViewHolder>() {
+class PratoAdapter(
+    private val listaPratos: List<Prato>,
+    private val onItemToggled: (Prato) -> Unit
+) : RecyclerView.Adapter<PratoAdapter.PratoViewHolder>() {
+
+    private val pratosSelecionados = mutableSetOf<Prato>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PratoViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_prato, parent, false)
@@ -24,9 +28,23 @@ class PratoAdapter(private val listaPratos: List<Prato>, private val onItemAdded
         holder.txtDescricao.text = prato.descricao
         holder.txtPreco.text = "R$ %.2f".format(prato.preco)
 
-        // Botão de adicionar produto ao carrinho
-        holder.btnAdicionar.setOnClickListener {
-            onItemAdded(prato)
+        // Alterar o fundo quando selecionado
+        holder.itemView.setBackgroundColor(
+            if (pratosSelecionados.contains(prato))
+                ContextCompat.getColor(holder.itemView.context, R.color.light_gray)
+            else
+                ContextCompat.getColor(holder.itemView.context, android.R.color.white)
+        )
+
+        // Clique para selecionar/deselecionar
+        holder.itemView.setOnClickListener {
+            if (pratosSelecionados.contains(prato)) {
+                pratosSelecionados.remove(prato)
+            } else {
+                pratosSelecionados.add(prato)
+            }
+            notifyItemChanged(position)
+            onItemToggled(prato)
         }
     }
 
@@ -37,6 +55,5 @@ class PratoAdapter(private val listaPratos: List<Prato>, private val onItemAdded
         val txtNome: TextView = view.findViewById(R.id.txtNome)
         val txtDescricao: TextView = view.findViewById(R.id.txtDescricao)
         val txtPreco: TextView = view.findViewById(R.id.txtPreco)
-        val btnAdicionar: Button = view.findViewById(R.id.btnAdicionar)
     }
 }

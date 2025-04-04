@@ -7,7 +7,8 @@ data class Prato(
     val nome: String,
     val descricao: String,
     val preco: Double,
-    val imagem: Int
+    val imagem: Int,
+    var quantidade: Int = 1
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
