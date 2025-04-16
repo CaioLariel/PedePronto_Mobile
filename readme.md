@@ -3,15 +3,14 @@
 
 <body>
     <h1>Mobile App - Kotlin</h1>
-    <p>This project is an Android application developed in Kotlin. It allows users to view and select available orders, generating a unique token that can be used by external systems to validate the selected order.</p>
-
+    <p>This project is an Android application developed in Kotlin. It allows users to view and select available orders, generating a unique token that can be used by external systems to validate the selected order.
+</p>
     <a href="https://www.youtube.com/watch?v=xN9yjF8w_xs" target="_blank">
         <img src="/gif/gif.gif" alt="video" width="460" height="300">
     </a>
     <p>Click the image above to watch a demo video of the app.</p>
 </body>
 </html>
-
 ## Description
 
 ### Order Selection  
