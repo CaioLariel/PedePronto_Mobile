@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">pedeProntoApp</string>
-        <string name="total_text">Total: R$ %.2f</string>
-        <string name="server_error">Erro ao conectar com o servidor</string>
-        <string name="server_response_error">Erro no servidor: %d</string>
+    <string name="total_text">Total: R$ %.2f</string>
+    <string name="server_error">Erro ao conectar com o servidor</string>
+    <string name="server_response_error">Erro no servidor: %d</string>
 
 </resources>

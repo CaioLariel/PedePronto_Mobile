@@ -28,7 +28,6 @@ class CarrinhoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_carrinho)
 
-        // Substituindo método deprecated
         listaProdutos = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableArrayListExtra("produtos", Prato::class.java) ?: arrayListOf()
         } else {
